@@ -1,55 +1,42 @@
 # My-Election-Campaign
 Vote For Progress Soham Phapale
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vote Soham Phapale | UoB Guild of students Postgraduate Officer</title>
+  <title>Vote Soham Phapale | UoB Postgraduate Officer</title>
   <style>
     :root{
-      --bg:#f7f4ff;
-      --bg-soft:#efe8ff;
-      --card:#ffffffde;
-      --text:#171326;
-      --muted:#5f5877;
-      --primary:#6d28d9;
-      --accent:#ec4899;
-      --line:rgba(109,40,217,.14);
-      --shadow:0 18px 45px rgba(36,18,80,.14);
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.88);
+      --primary:#111111;
+      --accent:#e91e63;
+      --accent-2:#ff4f8b;
+      --card-bg:rgba(0,0,0,.52);
+      --card-border:rgba(255,255,255,.14);
+      --shadow:0 20px 50px rgba(0,0,0,.35);
       --max:1180px;
     }
 
-    *{ box-sizing:border-box; scroll-behavior:smooth; }
+    *{
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    html, body{
+      margin:0;
+      padding:0;
+    }
 
     body{
-      margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("https://i.ibb.co/h1rWSPjq/your-image.jpg");
-        radial-gradient(circle at 12% 10%, #ffffff, transparent 30%),
-        radial-gradient(circle at 88% 18%, #f7d9ff, transparent 25%),
-        linear-gradient(135deg, var(--bg), var(--bg-soft));
+      background:
+        linear-gradient(rgba(12,10,24,.72), rgba(12,10,24,.72)),
+        url("https://i.ibb.co/Xk6sqhgw/Whats-App-Image-2026-03-08-at-22-35-08.jpg") center/cover no-repeat fixed;
       overflow-x:hidden;
-    }
-
-    .orb{
-      position:fixed;
-      border-radius:50%;
-      filter:blur(60px);
-      opacity:.28;
-      pointer-events:none;
-      z-index:0;
-    }
-    .orb.one{
-      width:260px;height:260px;
-      background:#d8c0ff;
-      top:-60px; left:-80px;
-    }
-    .orb.two{
-      width:320px;height:320px;
-      background:#ffc7dd;
-      bottom:-110px; right:-90px;
+      min-height:100vh;
     }
 
     canvas#confetti{
@@ -76,12 +63,13 @@ Vote For Progress Soham Phapale
 
     .brand{
       font-weight:900;
-      letter-spacing:.2px;
-      font-size:1.05rem;
+      letter-spacing:.3px;
+      font-size:1.08rem;
+      color:#fff;
     }
 
     .brand span{
-      color:var(--primary);
+      color:#ff7ab0;
     }
 
     .nav-links{
@@ -115,15 +103,15 @@ Vote For Progress Soham Phapale
 
     .btn-primary{
       color:#fff;
-      background:linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow:0 14px 28px rgba(109,40,217,.24);
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow:0 14px 28px rgba(233,30,99,.28);
     }
 
     .btn-secondary{
-      color:var(--primary);
-      background:#fff;
-      border:1px solid rgba(109,40,217,.18);
-      box-shadow:0 10px 24px rgba(0,0,0,.06);
+      color:#fff;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter:blur(8px);
     }
 
     .btn:hover{
@@ -132,10 +120,10 @@ Vote For Progress Soham Phapale
 
     .hero{
       display:grid;
-      grid-template-columns: 1.08fr .92fr;
+      grid-template-columns: 1.05fr .95fr;
       gap:34px;
       align-items:center;
-      padding:26px 0 36px;
+      padding:28px 0 42px;
       min-height:calc(100vh - 90px);
     }
 
@@ -145,22 +133,23 @@ Vote For Progress Soham Phapale
       gap:10px;
       padding:10px 14px;
       border-radius:999px;
-      background:#fff;
-      border:1px solid var(--line);
-      box-shadow:0 10px 24px rgba(0,0,0,.05);
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
       font-weight:800;
-      color:var(--primary);
+      color:#fff;
+      backdrop-filter:blur(10px);
     }
 
     .hero h1{
       margin:16px 0 12px;
-      font-size:clamp(2.4rem, 5vw, 4.7rem);
+      font-size:clamp(2.5rem, 5vw, 4.8rem);
       line-height:1.02;
       letter-spacing:-1.4px;
     }
 
     .hero h1 .grad{
-      background:linear-gradient(135deg, var(--primary), var(--accent));
+      background:linear-gradient(135deg, #ffffff, #ff9dc3);
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
@@ -191,22 +180,24 @@ Vote For Progress Soham Phapale
     .pill{
       padding:10px 14px;
       border-radius:999px;
-      background:#fff;
-      border:1px solid var(--line);
-      color:var(--muted);
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      color:#fff;
       font-weight:700;
       font-size:.94rem;
+      backdrop-filter:blur(8px);
     }
 
     .hero-card{
       position:relative;
-      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.76));
-      border:1px solid rgba(255,255,255,.78);
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
       border-radius:30px;
       box-shadow:var(--shadow);
       overflow:hidden;
       padding:18px;
       min-height:560px;
+      backdrop-filter:blur(10px);
     }
 
     .candidate-photo{
@@ -217,14 +208,14 @@ Vote For Progress Soham Phapale
       object-position:center top;
       border-radius:24px;
       display:block;
-      background:#ece8f8;
+      background:#ddd;
     }
 
     .photo-tag{
       position:absolute;
       left:28px;
       bottom:28px;
-      background:rgba(23,19,38,.84);
+      background:rgba(0,0,0,.64);
       color:#fff;
       padding:16px 18px;
       border-radius:18px;
@@ -235,7 +226,7 @@ Vote For Progress Soham Phapale
 
     .photo-tag strong{
       display:block;
-      font-size:1.06rem;
+      font-size:1.08rem;
       margin-bottom:4px;
     }
 
@@ -268,8 +259,8 @@ Vote For Progress Soham Phapale
     }
 
     .card{
-      background:var(--card);
-      border:1px solid rgba(255,255,255,.75);
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
       border-radius:22px;
       padding:22px;
       box-shadow:var(--shadow);
@@ -283,14 +274,15 @@ Vote For Progress Soham Phapale
       display:grid;
       place-items:center;
       font-size:1.35rem;
-      background:linear-gradient(135deg, rgba(109,40,217,.14), rgba(236,72,153,.12));
-      color:var(--primary);
+      background:linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.08));
+      color:#fff;
       margin-bottom:14px;
     }
 
     .card h3{
       margin:0 0 8px;
       font-size:1.12rem;
+      color:#fff;
     }
 
     .card p{
@@ -300,16 +292,22 @@ Vote For Progress Soham Phapale
       font-size:.98rem;
     }
 
+    .message-card{
+      max-width:820px;
+      margin:0 auto;
+    }
+
     .cta{
       margin:34px 0 46px;
       padding:28px;
       border-radius:28px;
-      background:linear-gradient(135deg, rgba(109,40,217,.96), rgba(236,72,153,.92));
+      background:linear-gradient(135deg, rgba(233,30,99,.92), rgba(17,17,17,.9));
       color:#fff;
       text-align:center;
-      box-shadow:0 20px 45px rgba(109,40,217,.28);
+      box-shadow:0 20px 45px rgba(0,0,0,.34);
       position:relative;
       overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
     }
 
     .cta h2{
@@ -345,29 +343,30 @@ Vote For Progress Soham Phapale
 
     .yes-btn{
       background:#fff;
-      color:var(--primary);
-      box-shadow:0 10px 24px rgba(0,0,0,.08);
+      color:#111;
+      box-shadow:0 10px 24px rgba(0,0,0,.15);
     }
 
     .no-btn{
-      background:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.16);
       color:#fff;
-      border:1px solid rgba(255,255,255,.35);
+      border:1px solid rgba(255,255,255,.32);
       backdrop-filter:blur(6px);
       position:relative;
     }
 
     .result{
       margin-top:18px;
-      min-height:30px;
+      min-height:32px;
       font-weight:900;
       font-size:1.1rem;
+      color:#fff;
     }
 
     footer{
       padding:0 0 34px;
       text-align:center;
-      color:var(--muted);
+      color:rgba(255,255,255,.82);
       font-size:.95rem;
     }
 
@@ -426,8 +425,6 @@ Vote For Progress Soham Phapale
 </head>
 <body>
   <canvas id="confetti"></canvas>
-  <div class="orb one"></div>
-  <div class="orb two"></div>
 
   <div class="container">
     <nav class="nav">
@@ -469,7 +466,7 @@ Vote For Progress Soham Phapale
       <div class="hero-card fade-up">
         <img
           class="candidate-photo"
-          src="https://i.ibb.co/Y7Q8qKpS/your-photo.jpg"
+          src="https://i.ibb.co/C58vTXhy/Whats-App-Image-2026-03-08-at-22-35-29.jpg"
           alt="Soham Phapale campaign photo"
         />
         <div class="photo-tag">
@@ -530,7 +527,7 @@ Vote For Progress Soham Phapale
         </p>
       </div>
 
-      <div class="card fade-up" style="max-width:820px; margin:0 auto;">
+      <div class="card fade-up message-card">
         <h3>My message</h3>
         <p>
           Postgraduates should not feel like an afterthought. Whether you are a taught student,
@@ -633,7 +630,7 @@ Vote For Progress Soham Phapale
           a: rand(0, Math.PI * 2),
           va: rand(-0.2, 0.2),
           life: rand(70, 120),
-          hue: rand(0, 360),
+          hue: rand(0, 360)
         });
       }
 
