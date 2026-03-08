@@ -1,6 +1,5 @@
 # My-Election-Campaign
 Vote For Progress Soham Phapale
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -26,7 +25,8 @@ Vote For Progress Soham Phapale
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background:
+      background:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("https://i.ibb.co/h1rWSPjq/your-image.jpg");
         radial-gradient(circle at 12% 10%, #ffffff, transparent 30%),
         radial-gradient(circle at 88% 18%, #f7d9ff, transparent 25%),
         linear-gradient(135deg, var(--bg), var(--bg-soft));
@@ -469,7 +469,7 @@ Vote For Progress Soham Phapale
       <div class="hero-card fade-up">
         <img
           class="candidate-photo"
-          src="/mnt/data/43DE6FE2-D265-4181-955D-22441F38251D.jpeg"
+          src="https://i.ibb.co/Y7Q8qKpS/your-photo.jpg"
           alt="Soham Phapale campaign photo"
         />
         <div class="photo-tag">
